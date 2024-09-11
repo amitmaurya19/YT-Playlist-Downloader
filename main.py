@@ -1,6 +1,5 @@
 import os
 import threading
-import time
 from pytube import Playlist
 from colorama import init
 import yt_dlp as youtube_dl
@@ -84,11 +83,7 @@ class YTDownloaderApp(App):
     def build(self):
         # Set window size
         Window.size = (600, 400)
-        
-        # Main layout with vertical alignment (BoxLayout)
         layout = BoxLayout(orientation='vertical', spacing=20, padding=40, size_hint=(None, None), pos_hint={'center_x': 0.5, 'center_y': 0.5})
-
-        # Center all items in the middle
         layout.size_hint = (0.6, 0.6)  # Size of the layout, change as needed
         layout.pos_hint = {'center_x': 0.5, 'center_y': 0.5}  # Center the layout
 
@@ -100,8 +95,7 @@ class YTDownloaderApp(App):
         self.download_button = Button(text="Download Playlist", size_hint_y=None, height=40)
         self.download_button.bind(on_press=self.start_download)
         layout.add_widget(self.download_button)
-
-        # Output Label for download logs
+        
         self.output_label = Label(size_hint_y=None, height=40, text="Download Progress:")
         layout.add_widget(self.output_label)
 
@@ -115,7 +109,6 @@ class YTDownloaderApp(App):
         layout.add_widget(Label(text="Current Video Progress", size_hint_y=None, height=30))
         layout.add_widget(self.video_progress_bar)
 
-        # Bind the Enter key to start the download
         self.url_input.bind(on_text_validate=self.start_download)
 
         # Start a clock to update the video progress bar every 0.5 seconds
