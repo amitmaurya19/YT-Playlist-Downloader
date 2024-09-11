@@ -1,6 +1,8 @@
 # 🎥 YouTube Playlist Downloader
 
-This Python-based app allows you to download entire YouTube playlists with video progress tracking. The app uses Kivy for the GUI and PyTube for playlist handling, along with `yt-dlp` to download the videos.
+## Important Notes 📢
+
+- **Download Speed**: The download process may depend on network speed and might take a few seconds to start. Once it begins, the process is hassle-free. 🌐⌛
 
 ## Features 🌟
 
