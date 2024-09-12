@@ -4,7 +4,6 @@ This is a Kivy-based desktop application that allows users to download YouTube v
 1. **Single Video Download** 
 2. **Playlist Download** 
 
-
 ## ✨ Features
 
 - 📥 Download single videos from YouTube by entering the video URL.
@@ -22,18 +21,36 @@ This is a Kivy-based desktop application that allows users to download YouTube v
 
 ## 🚀 Installation
 
-1. **Clone the Repository**:
+### 1. Install **FFmpeg**:
+Since `yt-dlp` uses FFmpeg to merge video and audio streams, you must install it first.
+
+- **For Windows**:
+    1. Download FFmpeg from the official site: https://ffmpeg.org/download.html
+    2. Extract the zip file.
+    3. Add the `bin` folder from the extracted FFmpeg directory to your system's PATH variable.
+
+- **For macOS**:
+    ```bash
+    brew install ffmpeg
+    ```
+
+- **For Linux**:
+    ```bash
+    sudo apt install ffmpeg
+    ```
+
+### 2. Clone the Repository:
     ```bash
     git clone https://github.com/your-username/yt-downloader.git
     cd yt-downloader
     ```
 
-2. **Install Dependencies**:
+### 3. Install Dependencies:
     ```bash
     pip install kivy pytube colorama yt-dlp
     ```
 
-3. **Run the Application**:
+### 4. Run the Application:
     ```bash
     python merger.py
     ```
@@ -46,19 +63,18 @@ The application consists of two main sections:
 
 1. **Single Video Download**:
     - Enter the YouTube video URL in the input field.
-    - Click "Download Video" or press "Enter" and wait for few seconds to start the download.
+    - Click "Download Video" or press "Enter" and wait a few seconds to start the download.
     - The progress bar and output label will show the status of the video download.
 
 2. **Playlist Download**:
     - Enter the YouTube playlist URL in the input field.
-    - Click "Download Playlist" or press "Enter" and wait for few seconds to start downloading all videos in the playlist.
+    - Click "Download Playlist" or press "Enter" and wait a few seconds to start downloading all videos in the playlist.
     - A playlist progress bar shows the progress for the entire playlist.
     - Another progress bar shows the status of the currently downloading video.
 
 ### 📊 Progress Bars
 - **Current Video Progress**: Tracks the percentage of the ongoing video download.
 - **Playlist Progress**: Tracks the overall progress of the playlist download (if downloading a playlist).
-
 
 ## 📝 Usage
 
@@ -89,5 +105,3 @@ The application consists of two main sections:
 ## 📜 License
 
 This project is licensed under the MIT License.
-
-
