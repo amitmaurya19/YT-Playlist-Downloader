@@ -1,83 +1,94 @@
-# 🎥 YouTube Playlist Downloader
+# 🎥 YouTube Downloader App
 
-## Important Notes 📢
+This is a Kivy-based desktop application that allows users to download YouTube videos and entire playlists. The application has two sections:
+1. **Single Video Download** 
+2. **Playlist Download** 
 
-- **Download Speed**: The download process may depend on network speed and might take a few seconds to start. Once it begins, the process is hassle-free. 🌐⌛
+Both sections are neatly separated in the app window for ease of use.
 
-## Features 🌟
+## ✨ Features
 
-- Downloads entire YouTube playlists. 🎬
-- Shows overall progress and per-video progress. 📊
-- Cross-platform support (Windows, macOS, and Linux). 🌐
-- Customizable file output path (set to Desktop by default). 🖥️
-- Supports best video and audio quality. 🎥🔊
+- 📥 Download single videos from YouTube by entering the video URL.
+- 📃 Download complete playlists by entering the playlist URL.
+- 📊 Separate progress bars for both playlist and single video downloads.
+- ⚙️ Progress indicator for the currently downloading video in both modes.
+- 📂 Downloads are saved to a folder named `YT Downloader` on your desktop.
 
-## Requirements ⚙️
+## 🛠️ Technologies Used
+**Python Libraries**
+- **Kivy**: For the graphical user interface (GUI).
+- **Pytube**: To handle playlists and retrieve video URLs.
+- **yt-dlp**: For downloading videos and playlists.
+- **Colorama**: Provides colored terminal output (though not used in the GUI).
 
-- **Python 3.7+** 🐍
-- **Kivy** 🌟
-- **yt-dlp** 🎥
-- **Pytube** 📺
-- **Colorama** 🌈
-- **FFmpeg** 🎞️
+## 🚀 Installation
 
-### FFmpeg Setup 🎬
-
-This application requires FFmpeg for merging audio and video streams. Follow the steps below to set up FFmpeg:
-
-1. **Download FFmpeg:**
-   - [Download FFmpeg (Windows)](https://ffmpeg.org/download.html)
-   - Unzip this folder and place it in your OS disk space (usually `C:` drive). 📦
-
-2. **Add FFmpeg to PATH:**
-   - Go to the extracted FFmpeg folder.
-   - Inside the folder, locate the `bin` folder (where the FFmpeg executables reside).
-   - Add the path of this `bin` folder to your system's environment variables.
-
-   #### Steps to add to environment variables on Windows:
-
-   - Right-click **This PC** or **My Computer** and select **Properties**. 🖱️
-   - Select **Advanced system settings** from the left sidebar. ⚙️
-   - Click the **Environment Variables** button. 🔧
-   - In the **System variables** section, find the `Path` variable and click **Edit**. 📝
-   - Add the full path to the `bin` folder, for example: `C:\ffmpeg\bin`.
-   - Click **OK** to close all windows. ✅
-
-   After this, FFmpeg should be accessible globally on your system, and the app can properly merge video and audio files. 🎉
-
-## Installation 🛠️
-
-1. **Clone the repository**:
+1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/YouTube-Playlist-Downloader.git
-    cd YouTube-Playlist-Downloader
+    git clone https://github.com/your-username/yt-downloader.git
+    cd yt-downloader
     ```
 
-2. **Install required Python packages**:
+2. **Install Dependencies**:
     ```bash
-    pip install -r requirements.txt
+    pip install kivy pytube colorama yt-dlp
     ```
 
-3. **Ensure FFmpeg is set up as described above**. 🔄
-
-4. **Run the application**:
+3. **Run the Application**:
     ```bash
-    python main.py
+    python merger.py
     ```
 
-## Usage 🚀
+## 💡 How It Works
 
-1. Enter the URL of a YouTube playlist into the text input field. 🌐
-2. Click the "Download Playlist" button or press **Enter** to start the download process. 📥
-3. Track the progress via the overall playlist and individual video progress bars. 📊
-4. Downloaded videos will be saved to a folder on your Desktop named `YT Downloader`. 🗂️
+### Main Sections
 
-## License 📜
+The application consists of two main sections:
 
-This project is licensed under the MIT License. 🏅
+1. **Single Video Download**:
+    - Enter the YouTube video URL in the input field.
+    - Click "Download Video" to start the download.
+    - The progress bar and output label will show the status of the video download.
 
-## Acknowledgements 🙌
+2. **Playlist Download**:
+    - Enter the YouTube playlist URL in the input field.
+    - Click "Download Playlist" to start downloading all videos in the playlist.
+    - A playlist progress bar shows the progress for the entire playlist.
+    - Another progress bar shows the status of the currently downloading video.
 
-- [Kivy](https://kivy.org/#home) - For building the GUI. 💻
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - For downloading YouTube videos. 🎥
-- [Pytube](https://pytube.io/en/latest/) - For handling YouTube playlists. 📺
+### 📊 Progress Bars
+- **Current Video Progress**: Tracks the percentage of the ongoing video download.
+- **Playlist Progress**: Tracks the overall progress of the playlist download (if downloading a playlist).
+
+
+## 📝 Usage
+
+1. **Single Video Download**:
+    - Copy the YouTube video URL.
+    - Paste it into the **Single Video** section input field.
+    - Click the "Download Video" button to start the download.
+    - Track the download progress via the progress bar.
+
+2. **Playlist Download**:
+    - Copy the YouTube playlist URL.
+    - Paste it into the **Playlist** section input field.
+    - Click the "Download Playlist" button to start downloading the entire playlist.
+    - Track both the playlist progress and the currently downloading video’s progress via the two progress bars.
+
+## 🛑 Known Issues
+
+- The app may temporarily freeze when handling large playlists, depending on the number of videos and your internet speed.
+- If the URL is invalid, restricted, or the connection fails, the download will not proceed, and an error message will be displayed.
+
+## 🌟 Future Improvements
+
+- Add support for selecting specific videos from a playlist to download.
+- Provide video quality options for users to choose before downloading.
+- Improve performance for handling large playlists.
+- Add a cancel button to stop an ongoing download.
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+
