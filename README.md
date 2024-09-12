@@ -4,7 +4,6 @@ This is a Kivy-based desktop application that allows users to download YouTube v
 1. **Single Video Download** 
 2. **Playlist Download** 
 
-Both sections are neatly separated in the app window for ease of use.
 
 ## ✨ Features
 
@@ -47,12 +46,12 @@ The application consists of two main sections:
 
 1. **Single Video Download**:
     - Enter the YouTube video URL in the input field.
-    - Click "Download Video" to start the download.
+    - Click "Download Video" or press "Enter" and wait for few seconds to start the download.
     - The progress bar and output label will show the status of the video download.
 
 2. **Playlist Download**:
     - Enter the YouTube playlist URL in the input field.
-    - Click "Download Playlist" to start downloading all videos in the playlist.
+    - Click "Download Playlist" or press "Enter" and wait for few seconds to start downloading all videos in the playlist.
     - A playlist progress bar shows the progress for the entire playlist.
     - Another progress bar shows the status of the currently downloading video.
 
